@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,21 +12,50 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iAmRich" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ruby-on-rails" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-oR-wGv">
-                                <rect key="frame" x="47" y="309" width="320" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruby-on-rails" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-oR-wGv">
+                                <rect key="frame" x="27.666666666666657" y="229.00000000000003" width="319.66666666666674" height="277.66666666666674"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Am Rich!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mJj-nd-YwB">
+                                <rect key="frame" x="88" y="72" width="198" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <color key="textColor" red="0.93607240920000001" green="0.056395761670000003" blue="0.074660457669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0P-Ex-OcZ">
+                                <rect key="frame" x="142.66666666666666" y="596.66666666666663" width="90" height="47"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Hit me!">
+                                    <color key="titleColor" red="0.93607240920000001" green="0.056395761670000003" blue="0.074660457669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brJ-Ia-5kL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SVG-oR-wGv" firstAttribute="top" secondItem="mJj-nd-YwB" secondAttribute="bottom" constant="80" id="YsF-Ze-FQW"/>
+                            <constraint firstItem="SVG-oR-wGv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xom-EB-bnt"/>
+                            <constraint firstItem="Y0P-Ex-OcZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y9X-Z4-Vj8"/>
+                            <constraint firstItem="Y0P-Ex-OcZ" firstAttribute="top" secondItem="SVG-oR-wGv" secondAttribute="bottom" constant="90" id="yIA-Ya-eNo"/>
+                            <constraint firstItem="Y0P-Ex-OcZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zLU-s0-2gz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonHitme" destination="Y0P-Ex-OcZ" id="6Ug-D5-XNi"/>
+                        <outlet property="imageViewDiamond" destination="SVG-oR-wGv" id="9a7-cV-NwU"/>
+                        <outlet property="labelTitle" destination="mJj-nd-YwB" id="1D1-5d-RdY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+            <point key="canvasLocation" x="136.80000000000001" y="105.66502463054188"/>
         </scene>
     </scenes>
     <resources>
