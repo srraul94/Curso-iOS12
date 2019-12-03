@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C411A01723967C7900E58155 /* FontDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C411A01623967C7900E58155 /* FontDetailViewController.swift */; };
 		C4E30A3F2395712700990B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E30A3E2395712700990B39 /* AppDelegate.swift */; };
 		C4E30A412395712700990B39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E30A402395712700990B39 /* SceneDelegate.swift */; };
 		C4E30A432395712700990B39 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E30A422395712700990B39 /* FirstViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C411A01623967C7900E58155 /* FontDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDetailViewController.swift; sourceTree = "<group>"; };
 		C4E30A3B2395712700990B39 /* Coding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E30A3E2395712700990B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4E30A402395712700990B39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				C4E30A422395712700990B39 /* FirstViewController.swift */,
 				C4E30A442395712700990B39 /* SecondViewController.swift */,
 				C4E30A54239572DC00990B39 /* ThirdViewController.swift */,
+				C411A01623967C7900E58155 /* FontDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				C4E30A432395712700990B39 /* FirstViewController.swift in Sources */,
 				C4E30A55239572DC00990B39 /* ThirdViewController.swift in Sources */,
 				C4E30A3F2395712700990B39 /* AppDelegate.swift in Sources */,
+				C411A01723967C7900E58155 /* FontDetailViewController.swift in Sources */,
 				C4E30A412395712700990B39 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
