@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
 
@@ -58,6 +59,8 @@ class RegisterViewController: UIViewController {
             return
         }
         
+        SVProgressHUD.show()
+        
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error != nil {
@@ -66,6 +69,7 @@ class RegisterViewController: UIViewController {
             else{
                 //El usuario se registra correctamente.
                 print("usuario registrado correctamente")
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "fromRegisterToChat", sender: self)
             }
         }

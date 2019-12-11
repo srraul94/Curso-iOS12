@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController{
     
@@ -26,6 +27,9 @@ class LoginViewController: UIViewController{
     
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
+       
+        
         guard let email = emailTextField.text else {
             print("No ha podido obtenerse el email")
             return
@@ -36,12 +40,17 @@ class LoginViewController: UIViewController{
             return
         }
         
+       //Mirar AppDelegate y SceneDelegate para ver que hay que añadir para que funcione
+       SVProgressHUD.show()
+        
+        
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
             if error != nil {
                 print(error!)
             }
             else{
                 print("Login satisfactorio")
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "fromLoginToChat", sender: self)
             }
             

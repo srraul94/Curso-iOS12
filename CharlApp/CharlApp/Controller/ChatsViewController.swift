@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
   
@@ -16,7 +17,9 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var textBoxHeight: NSLayoutConstraint!
     
-    let array:[Message] = [ Message(sender: "Paco", msg: "Hola amigo! que tal estas") ,Message(sender: "Juan", msg: "Hola amigo! que tal colega") ,Message(sender: "Jose", msg: "Hola amigo! que tal hdp")]
+    var array:[Message] = [Message]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +31,19 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.messageTableView.dataSource = self
         self.messageTextField.delegate = self
        
+       
+        
         //Registro la celda creada con XIB para usarla de prototipo.
         self.messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "MessageCellID")
+        self.messageTableView.separatorStyle = .none
         
-       self.messageTableView.rowHeight = UITableView.automaticDimension
-       self.messageTableView.estimatedRowHeight = 120
+        //Establece el tamaño correcto de las celdas de la tabla
+        configureTableView()
+        
+        //Estabece un observador del evento .childAdded para saber cuando se añade uno nuevo.
+        retriveMessagesFromFirebase()
+        
+      
     }
     
     @IBAction func exitButtonPressed(_ sender: UIBarButtonItem) {
@@ -76,7 +87,26 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     
-   
+    func retriveMessagesFromFirebase(){
+        let messagesBD = Database.database().reference().child("Messages")
+        messagesBD.observe(.childAdded) { (snapchot) in
+            let snapshotValue = snapchot.value as! Dictionary<String,String>
+            let sender = snapshotValue["sender"]!
+            let msg = snapshotValue["msg"]!
+            
+            let message = Message(sender: sender, msg: msg)
+            self.array.append(message)
+            
+            self.configureTableView()
+            self.messageTableView.reloadData()
+            
+        }
+    }
+    
+    func configureTableView(){
+        self.messageTableView.rowHeight = UITableView.automaticDimension
+        self.messageTableView.estimatedRowHeight = 120
+    }
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -92,6 +122,14 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         cell.usernameLabel.text = self.array[indexPath.row].sender
         cell.messageLabel.text = self.array[indexPath.row].message
+        
+        if cell.usernameLabel.text == Auth.auth().currentUser?.email{
+            cell.messageView.backgroundColor = UIColor.flatMint()
+        }
+        else{
+            cell.messageView.backgroundColor = UIColor.flatGray()
+        }
+        
         return cell
     }
     
