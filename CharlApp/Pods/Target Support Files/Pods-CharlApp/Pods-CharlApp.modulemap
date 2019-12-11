@@ -1,0 +1,6 @@
+framework module Pods_CharlApp {
+  umbrella header "Pods-CharlApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

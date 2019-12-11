@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>754838655626-8tnlpntj5utknof0to91ebbb8vj1brmh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.754838655626-8tnlpntj5utknof0to91ebbb8vj1brmh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDG_lZH9xEbsUXVka6qB3dkJcJ40MdGWSE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>754838655626</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.srraul94.CharlApp</string>
+	<key>PROJECT_ID</key>
+	<string>charlapp-19636</string>
+	<key>STORAGE_BUCKET</key>
+	<string>charlapp-19636.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:754838655626:ios:50943eb4941b63771a9373</string>
+	<key>DATABASE_URL</key>
+	<string>https://charlapp-19636.firebaseio.com</string>
+</dict>
+</plist>
